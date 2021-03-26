@@ -50,10 +50,8 @@ class Cell {
   }
 
   highlight() {
-    // push();
     noStroke();
     fill(255, 0, 0);
     rect(this.x, this.y, size - 2, size - 2);
-    // pop();
   }
 }

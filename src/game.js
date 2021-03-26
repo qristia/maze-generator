@@ -35,3 +35,12 @@ function removeWall(c1, c2) {
     c1.walls.b = 0;
   }
 }
+
+function drawCells() {
+  background(255);
+  for (let i = 0; i < cols; i++) {
+    for (let j = 0; j < rows; j++) {
+      grid[i][j].show();
+    }
+  }
+}

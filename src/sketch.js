@@ -7,7 +7,7 @@ var grid = [];
 var stack = [];
 var current;
 var canSee;
-var keeptrail = false;
+var keeptrail;
 var isFinished = false;
 
 function init() {
@@ -18,9 +18,10 @@ function init() {
   WIDTH = size * cols;
   HEIGHT = size * rows;
   grid = [];
+  stack = [];
   isFinished = false;
 
-  // fill with grid with cells
+  // fill grid with cells
   for (let i = 0; i < cols; i++) {
     let row = [];
     for (let j = 0; j < rows; j++) {
@@ -33,28 +34,17 @@ function init() {
   current.visited = true;
 }
 
-function drawCells() {
-  background(255);
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      grid[i][j].show();
-    }
-  }
-}
-
 function run() {
-  if (!canSee) {
-    while(!isFinished) {
-      generate();
-    }
-    drawCells();
+  while (!isFinished) {
+    generate();
   }
+  drawCells();
 }
 
 function setup() {
   init();
   createCanvas(WIDTH, HEIGHT);
-  run();
+  if (!canSee) run();
 }
 
 function draw() {
