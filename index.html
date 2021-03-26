@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="p5.min.js"></script>
+    <title>Maze Generator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <div class="menu">
+      <label for="cols">cols: </label>
+      <input min="10" value="20" type="number" name="cols" id="cols" step="2" />
+      <label for="rows">rows:</label>
+      <input min="10" value="20" type="number" id="rows" name="rows" step="2" />
+      <label for="cellsize">cell size:</label>
+      <input
+        min="10"
+        value="30"
+        type="number"
+        id="cellsize"
+        name="cellsize"
+        step="2"
+      />
+      <span>
+        <label for="watch">watch: </label>
+        <input name="watch" id="watch" type="checkbox" checked />
+      </span>
+      <button type="submit">generate</button>
+    </div>
+    <script src="./src/game.js"></script>
+    <script src="./src/bind.js"></script>
+    <script src="./src/sketch.js"></script>
+    <script src="./src/cell.js"></script>
+  </body>
+</html>

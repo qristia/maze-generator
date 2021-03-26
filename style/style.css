@@ -1,0 +1,49 @@
+body {
+    background: black;
+    display: flex;
+}
+
+.menu {
+    background-color: #424242;
+    display: flex;
+    max-width: 250px;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px 0px 0px 10px;
+    font-size: larger;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.menu label {
+    color: white;
+}
+.menu input {
+    color: black;
+    height: 20px;
+    border: solid white;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+
+.menu button {
+    margin-top: 5px;
+    padding: 10px;
+    border: solid white;
+    border-radius: 10px;
+    background: inherit;
+    color: white;
+}
+.menu button:hover {
+    background: white;
+    color: black;
+}
+
+.menu span {
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    height: 0;
+}
