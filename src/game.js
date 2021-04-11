@@ -36,11 +36,23 @@ function removeWall(c1, c2) {
   }
 }
 
+function initEnds(a, b) {
+  startPoint = new Cell(a.x*size, a.y*size);
+  endPoint = new Cell(b.x * size - size, b.y * size - size);
+
+  grid[a.x][a.y].walls.t = 0;
+  grid[b.x - 1][b.y - 1].walls.b = 0;
+}
+
 function drawCells() {
-  background(255);
+  translate(size / 2, size / 2);
+  background(21);
+
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
       grid[i][j].show();
     }
   }
+  startPoint.highlight({ r: 255, g: 50, b: 200, a: 100 });
+  endPoint.highlight({ r: 123, g: 54, b: 171, a: 100 });
 }

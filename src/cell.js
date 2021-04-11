@@ -34,24 +34,32 @@ class Cell {
 
   show() {
     push();
-    stroke(51);
+    strokeWeight(3)
+    stroke(255);
     translate(this.x, this.y);
+
+    if (this.visited) {
+      push()
+      noStroke();
+      fill(21);
+      rect(0, 0, size, size);
+      pop()
+    }
+    
     if (this.walls.t) line(0, 0, size, 0);
     if (this.walls.b) line(0, size, size, size);
     if (this.walls.l) line(0, 0, 0, size);
     if (this.walls.r) line(size, 0, size, size);
 
-    if (this.visited) {
-      noStroke();
-      fill(50, 50, 199, 100);
-      rect(0, 0, size, size);
-    }
     pop();
   }
 
-  highlight() {
+  highlight(color = {r: 255, g: 0, b: 0, a: 255}) {
+    push();
     noStroke();
-    fill(255, 0, 0);
-    rect(this.x, this.y, size - 2, size - 2);
+    rectMode(CENTER);
+    fill(color.r, color.g, color.b, color.a);
+    rect(this.x+size/2, this.y+size/2, size, size)
+    pop();
   }
 }

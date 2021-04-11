@@ -10,13 +10,16 @@ var canSee;
 var keeptrail;
 var isFinished = false;
 
+let startPoint;
+let endPoint;
+
 function init() {
   rows = parseInt(document.getElementById("rows").value);
   cols = parseInt(document.getElementById("cols").value);
   size = parseInt(document.getElementById("cellsize").value);
   canSee = document.getElementById("watch").checked;
-  WIDTH = size * cols;
-  HEIGHT = size * rows;
+  WIDTH = size * cols + size;
+  HEIGHT = size * rows + size;
   grid = [];
   stack = [];
   isFinished = false;
@@ -32,6 +35,8 @@ function init() {
 
   current = grid[0][0];
   current.visited = true;
+
+  initEnds({ x: 0, y: 0 }, { x: cols, y: rows });
 }
 
 function run() {
@@ -44,6 +49,7 @@ function run() {
 function setup() {
   init();
   createCanvas(WIDTH, HEIGHT);
+  // frameRate(5)
   if (!canSee) run();
 }
 
